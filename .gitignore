@@ -1,0 +1,52 @@
+# === Symfony / PHP ===
+/vendor/
+/var/
+/.env
+.env.local
+.env.*.local
+/phpunit.result.cache
+/.phpunit.cache/
+/public/bundles/
+/node_modules/
+
+# Cache and logs
+/var/cache/
+/var/log/
+/var/sessions/
+
+# === Node / React / Vite ===
+/node_modules/
+/dist/
+/build/
+/.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# === Docker ===
+# Ignore Docker container override files, local environment overrides, volumes, etc.
+docker-compose.override.yml
+*.env.docker
+
+# === TypeScript / JavaScript ===
+*.tsbuildinfo
+
+# === IDEs ===
+/.idea/
+/.vscode/
+/*.iml
+
+# === OS system files ===
+.DS_Store
+Thumbs.db
+
+# === Logs and lock files ===
+*.log
+*.lock
+
+# === MySQL dumps (if any) ===
+*.sql
+*.sql.gz
