@@ -34,7 +34,7 @@ export default function News() {
         <Header />
         <Navbar />
 
-        <section className="max-w-2xl w-full text-center mt-10 p-6 bg-violet-100 rounded-2xl shadow-md ">
+        <section className="max-w-2xl w-full text-center mt-10 p-6 bg-violet-100 rounded-2xl shadow-md">
           
           <AlertMessage
             type="warning"
