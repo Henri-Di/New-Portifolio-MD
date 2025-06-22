@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   backend:
     build:
@@ -35,8 +37,8 @@ services:
 
   frontend:
     build:
-    context: ./frontend
-    dockerfile: Dockerfile
+      context: ./frontend
+      dockerfile: Dockerfile
     container_name: frontend
     restart: "no" # Build apenas uma vez
     networks:
