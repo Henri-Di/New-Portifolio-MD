@@ -81,7 +81,7 @@ export default function ProjectTwo() {
             controls 
             preload="metadata"
             >
-            <source src="../../../public/video/project-view-2.mp4" type="video/mp4" />
+            <source src="/video/project-view-2.mp4" type="video/mp4" />
             Seu navegador não suporta a tag de vídeo.
           </video>
           </div>
