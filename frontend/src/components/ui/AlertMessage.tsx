@@ -16,7 +16,7 @@ interface AlertMessageProps {
 export default function AlertMessage({ type = 'info', message }: AlertMessageProps) {
   const icons = {
     info: <Info size={18} />,
-    warning: <AlertTriangle size={18} />,
+    warning: <AlertTriangle size={1} />,
     error: <XCircle size={18} />,
     success: <CheckCircle size={18} />,
   };

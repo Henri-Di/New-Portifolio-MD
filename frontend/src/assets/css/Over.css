@@ -1,0 +1,17 @@
+/* styles.css ou como classes dentro do projeto */
+
+.label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.input {
+  @apply w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.input-icon {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 text-gray-500;
+}
+
+.error-message {
+  @apply text-sm text-red-500;
+}

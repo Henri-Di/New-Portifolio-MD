@@ -332,6 +332,7 @@ span {
    Layout vertical com espaçamento entre campos.
    Tamanho máximo e centrado horizontalmente.
 */
+
 form {
   background-color: #ffffff;
   padding: 2rem 1.5rem;
@@ -468,7 +469,9 @@ label svg {
   text-align: justify;
 }
 
-.container-cv-page {
+.container-cv-page,
+.container-news-page,
+.container-blog-page {
   margin-left: 3.555555rem;
   margin-right: 3.555555rem;
 }
@@ -536,4 +539,23 @@ video {
     padding: 1rem;
     font-size: 14px;
   }
+}
+
+@media (max-width: 768px) {
+  .container-news-page,
+  .container-blog-page {
+    margin-top: -10rem;
+    margin-left: 0.25rem;
+    margin-right: 1rem;
+
+  }
+  
+  .container-logo-page{
+    margin-bottom: 1rem;
+  }
+
+  .footer-text{
+    margin-top: 1rem;
+  }
+
 }

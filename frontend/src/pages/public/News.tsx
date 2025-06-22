@@ -26,7 +26,7 @@ export default function News() {
         <title>Novidades - M&D Desenvolvedor Web Fullstack</title>
       </Helmet>
 
-      <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center px-4 main-container container-cv-page">
+      <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center px-4 main-container container-news-page">
         <br />
         <br />
         <br />
@@ -34,7 +34,7 @@ export default function News() {
         <Header />
         <Navbar />
 
-        <section className="max-w-2xl w-full text-center mt-10 p-6 bg-violet-100 rounded-2xl shadow-md">
+        <section className="max-w-2xl w-full text-center mt-10 p-6 bg-violet-100 rounded-2xl shadow-md ">
           
           <AlertMessage
             type="warning"

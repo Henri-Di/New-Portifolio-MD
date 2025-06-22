@@ -78,7 +78,7 @@ export default function Projects() {
               ⚠️ Página em desenvolvimento. Este projeto ainda está em fase de construção e, em breve, será adicionado à coleção de projetos disponíveis neste portfólio.
             </div>
             <br/ >
-            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page mt-4" to="/services">
+            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page mt-4" to="/home">
               <FolderOpen size={18} /> Ver Projeto
             </Link>
           </div>

@@ -26,7 +26,7 @@ export default function Blog() {
         <title>Blog - M&D Desenvolvedor Web Fullstack</title>
       </Helmet>
 
-      <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center px-4 main-container container-cv-page">
+      <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center px-4 main-container container-blog-page">
         <br />
         <br />
         <br />
