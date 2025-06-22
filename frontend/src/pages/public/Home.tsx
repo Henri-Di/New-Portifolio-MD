@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import {
+import { 
   User,
   FolderKanban,
   BadgeCheck,
@@ -13,7 +13,8 @@ import {
 } from 'lucide-react';
 
 import { LoadingSpinner } from '../../components/ui/LoadingSpinner'; 
-
+import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer'; 
 import '../../assets/css/OvervView.css';
 
 export default function Home() {
@@ -35,15 +36,7 @@ export default function Home() {
       </Helmet>
 
       <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center justify-center px-4 main-container">
-        {/* Logo/Header */}
-        <header className="text-center mb-12 container-logo-page">
-          <h1 className="text-4xl md:text-5xl font-bold text-violet-700 text-logo-page">
-            M&D<br />
-            <span className="block text-sm text-white">
-              Matheus Diamantino - Desenvolvedor Web Fullstack
-            </span>
-          </h1>
-        </header>
+      <Header />
 
         {/* Cards - Primeira Linha */}
         <section className="grid gap-6 max-w-6xl w-full container-father-cards-page">
@@ -115,9 +108,7 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="text-center mb-12 footer-text">
-          &copy; {new Date().getFullYear()} Matheus Henrique Ribeiro Diamantino — Desenvolvedor Web Fullstack
-        </footer>
+        <Footer />
       </main>
     </>
   );

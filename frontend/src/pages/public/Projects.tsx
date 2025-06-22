@@ -2,14 +2,17 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import '../../assets/css/OvervView.css';
 import { LoadingSpinner } from '../../components/ui/LoadingSpinner';
+import Navbar from '../../components/ui/Navbar';
 import { useEffect, useState } from 'react';
-import { Info } from 'lucide-react';
+import { FolderOpen } from 'lucide-react';
+import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer'; 
 
 export default function Projects() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -24,105 +27,64 @@ export default function Projects() {
       </Helmet>
 
       <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center justify-center px-4 main-container">
-        <br />
-        <header className="text-center mb-12 container-logo-page">
-          <h1 className="text-4xl md:text-5xl font-bold text-violet-700 text-logo-page">
-            M&D<br />
-            <span className="block text-sm text-white">
-              Matheus Diamantino - 
-              Desenvolvedor Web Fullstack
-            </span>
-          </h1>
-        </header>
+        <Header />
+
+        {/* Navbar adicionada */}
+        <Navbar />
 
         <section className="grid gap-6 max-w-6xl w-full container-father-cards-page">
+          {/* Projeto Caixa */}
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
-            <h2 className="text-xl font-semibold text-violet-800 mb-2">Projeto 1</h2>
-            <p className="text-sm text-gray-700">
-              Projeto desenvolvido como parte de um estudo prático para testar e demonstrar habilidades em desenvolvimento fullstack, incluindo frontend com React e backend com Symfony.
+            <h2 className="text-xl font-semibold text-violet-800 mb-2">Caixa - Sistema de Inventário</h2>
+            <br />
+            <p className="text-sm text-gray-700 text-justify">
+              O sistema de gestão de estoque foi desenvolvido para atender às necessidades específicas de controle e monitoramento de inventário em dois datacenters da Caixa Econômica Federal, localizados no Distrito Federal, sob a responsabilidade do Departamento de Instalações. Este sistema visa otimizar a operação de inventário em ambientes corporativos de grande porte, com um alto nível de segurança e controle rigoroso de dados, garantindo a integridade e a disponibilidade das informações de estoque.
             </p>
-            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/about">
-              <Info size={18} /> Ver Projeto
+            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/project-one">
+              <FolderOpen size={18} /> Ver Projeto
             </Link>
           </div>
 
+          {/* Projeto Aurum */}
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
-            <h2 className="text-xl font-semibold text-violet-800 mb-2">Projeto 2</h2>
-            <p className="text-sm text-gray-700">
-              Projeto desenvolvido como parte de um estudo prático para testar e demonstrar habilidades em desenvolvimento fullstack, incluindo frontend com React e backend com Symfony.
+            <h2 className="text-xl font-semibold text-violet-800 mb-2">Aurum - Sistema de Vendas</h2>
+            <br />
+            <p className="text-sm text-gray-700 text-justify">
+              O Aurum é uma aplicação web completa desenvolvida para atender às necessidades de Ponto de Venda (PDV) e Gestão Empresarial, ideal para empresas que buscam eficiência, controle e praticidade em suas operações comerciais. Projetado com foco na usabilidade e na integração de processos, o sistema oferece uma ampla gama de funcionalidades que abrangem desde o controle de caixa, estoque, vendas e orçamentos, até a gestão de pessoas e outros recursos estratégicos voltados à administração do negócio.
             </p>
             <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/projects">
-              <Info size={18} /> Ver Projeto
+              <FolderOpen size={18} /> Ver Projeto
             </Link>
           </div>
 
+          {/* Projeto BandsCloud */}
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
-            <h2 className="text-xl font-semibold text-violet-800 mb-2">Projeto 3</h2>
-            <p className="text-sm text-gray-700">
-              Projeto desenvolvido como parte de um estudo prático para testar e demonstrar habilidades em desenvolvimento fullstack, incluindo frontend com React e backend com Symfony.
+            <h2 className="text-xl font-semibold text-violet-800 mb-2">BandsCloud - Sistema de Música</h2>
+            <br />
+            <p className="text-sm text-gray-700 text-justify">
+              O BandsCloud é uma plataforma web inovadora criada para fortalecer a conexão entre artistas independentes, estabelecimentos culturais e fãs de música. Pensada para fomentar a cena musical independente, a aplicação oferece um espaço onde músicos podem divulgar seus trabalhos, encontrar oportunidades para se apresentarem ao vivo e estabelecer parcerias com bares, casas de shows e outros locais que buscam talentos autênticos.
             </p>
             <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/skills">
-              <Info size={18} /> Ver Projeto
+              <FolderOpen size={18} /> Ver Projeto
             </Link>
           </div>
 
+          {/* Projeto em Construção */}
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
-            <h2 className="text-xl font-semibold text-violet-800 mb-2">Projeto 4</h2>
-            <p className="text-sm text-gray-700">
-              Projeto desenvolvido como parte de um estudo prático para testar e demonstrar habilidades em desenvolvimento fullstack, incluindo frontend com React e backend com Symfony.
-            </p>
-            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/services">
-              <Info size={18} /> Ver Projeto
+            <h2 className="text-xl font-semibold text-violet-800 mb-2">Projeto em Construção</h2>
+            <br />
+            <br />
+            <div className="mt-4 bg-yellow-100 text-yellow-800 text-sm font-medium px-4 py-2 rounded-md shadow-inner alert-project-card">
+              ⚠️ Página em desenvolvimento. Este projeto ainda está em fase de construção e, em breve, será adicionado à coleção de projetos disponíveis neste portfólio.
+            </div>
+            <br/ >
+            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page mt-4" to="/services">
+              <FolderOpen size={18} /> Ver Projeto
             </Link>
           </div>
         </section>
-
-        <section className="grid gap-6 max-w-6xl w-full mt-10 container-father-cards-page">
-          <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
-            <h2 className="text-xl font-semibold text-violet-800 mb-2">Projeto 5</h2>
-            <p className="text-sm text-gray-700">
-              Projeto desenvolvido como parte de um estudo prático para testar e demonstrar habilidades em desenvolvimento fullstack, incluindo frontend com React e backend com Symfony.
-            </p>
-            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/cv">
-              <Info size={18} /> Ver Projeto
-            </Link>
-          </div>
-
-          <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
-            <h2 className="text-xl font-semibold text-violet-800 mb-2">Projeto 6</h2>
-            <p className="text-sm text-gray-700">
-              Projeto desenvolvido como parte de um estudo prático para testar e demonstrar habilidades em desenvolvimento fullstack, incluindo frontend com React e backend com Symfony.
-            </p>
-            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/news">
-              <Info size={18} /> Ver Projeto
-            </Link>
-          </div>
-
-          <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
-            <h2 className="text-xl font-semibold text-violet-800 mb-2">Projeto 7</h2>
-            <p className="text-sm text-gray-700">
-              Projeto desenvolvido como parte de um estudo prático para testar e demonstrar habilidades em desenvolvimento fullstack, incluindo frontend com React e backend com Symfony.
-            </p>
-            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/contact">
-              <Info size={18} /> Ver Projeto
-            </Link>
-          </div>
-
-          <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
-            <h2 className="text-xl font-semibold text-violet-800 mb-2">Projeto 8</h2>
-            <p className="text-sm text-gray-700">
-              Projeto desenvolvido como parte de um estudo prático para testar e demonstrar habilidades em desenvolvimento fullstack, incluindo frontend com React e backend com Symfony.
-            </p>
-            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/blog">
-              <Info size={18} /> Ver Projeto
-            </Link>
-          </div>
-        </section>
-
-        <footer className="bg-gray-900 text-white text-center py-6 w-full mt-12 footer-text">
-          &copy; {new Date().getFullYear()} Matheus Henrique Ribeiro Diamantino — Desenvolvedor Web Fullstack
-        </footer>
-        <br />
+        
+        <Footer />
       </main>
     </>
   );

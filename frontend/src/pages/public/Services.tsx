@@ -3,13 +3,16 @@ import { Helmet } from 'react-helmet';
 import '../../assets/css/OvervView.css';
 import { LoadingSpinner } from '../../components/ui/LoadingSpinner';
 import { useEffect, useState } from 'react';
-import ProjectForm from '../../components/ui/FormsServices';
+import FormService from '../../components/ui/FormsServices';
+import Navbar from '../../components/ui/Navbar';
+import Header from '../../components/ui/Header';
+import Footer from '../../components/ui/Footer'; 
 
 export default function Services() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -24,23 +27,15 @@ export default function Services() {
       </Helmet>
 
       <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center justify-center px-4  main-container-sevices-page">
-        <br />
-        <header className="text-center mb-12 container-logo-page">
-          <h1 className="text-4xl md:text-5xl font-bold text-violet-700 text-logo-page">
-            M&D<br />
-            <span className="block text-sm text-white">
-              Matheus Diamantino - Desenvolvedor Web Fullstack
-            </span>
-          </h1>
-        </header>
+      <Header />
+
+        {/* Navbar adicionada */}
+        <Navbar />
 
         {/* Formulário de Projeto */}
-        <ProjectForm />
+        <FormService />
 
-        <footer className="bg-gray-900 text-white text-center py-6 w-full mt-12 footer-text">
-          &copy; {new Date().getFullYear()} Matheus Henrique Ribeiro Diamantino — Desenvolvedor Web Fullstack
-        </footer>
-        <br />
+        <Footer />
       </main>
     </>
   );

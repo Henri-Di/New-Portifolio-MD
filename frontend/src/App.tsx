@@ -7,6 +7,9 @@ import Home from "./pages/public/Home";
 import About from "./pages/public/About";
 import Contact from "./pages/public/Contact";
 import Projects from "./pages/public/Projects";
+import CV from "./pages/public/CV";
+import News from "./pages/public/News";
+import Blog  from "./pages/public/Blog";
 
 import Login from "./pages/admin/Login";
 import Dashboard from "./pages/admin/Dashboard";
@@ -26,7 +29,11 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/cv" element={<CV />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+    
 
           {/* Rotas administrativas protegidas */}
           <Route path="/admin/login" element={<Login />} />

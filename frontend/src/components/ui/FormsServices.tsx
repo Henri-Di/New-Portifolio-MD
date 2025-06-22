@@ -11,6 +11,7 @@ import {
   Phone,
   FileText,
 } from "lucide-react";
+import { useSubmitForm } from "../../hooks/useSubmitForm"; 
 
 type FormData = {
   nome: string;
@@ -40,21 +41,33 @@ const ramosAtividade = [
   "Energia",
 ];
 
-export default function ProjectForm() {
+export default function FormService() {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
     watch,
+    setError,
   } = useForm<FormData>();
+
+  // Usando o hook personalizado para submit
+  const { submit, loading, serverError } = useSubmitForm<FormData>({
+    url: "/api/services",
+    setError,
+  });
 
   const estadoSelecionado = watch("estado");
   const cidades = estadosECidades[estadoSelecionado] || [];
 
-  const onSubmit = (data: FormData) => {
-    console.log("Dados enviados:", data);
-    reset();
+  const onSubmit = async (data: FormData) => {
+    const result = await submit(data);
+    if (result) {
+      // Sucesso, limpa formulário
+      reset();
+      // Pode adicionar mensagem de sucesso, log, etc
+      console.log("Dados enviados com sucesso:", result);
+    }
   };
 
   return (
@@ -62,15 +75,21 @@ export default function ProjectForm() {
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         <h4 className="title-form-services-page">Solicitar Orçamento</h4>
 
+        {serverError && (
+          <p className="text-red-500 mb-4 font-semibold">{serverError}</p>
+        )}
+
         {/* Nome completo */}
         <div>
-          <label>
+          <label htmlFor="nome">
             <User />
             Nome completo
           </label>
           <input
+            id="nome"
             type="text"
             {...register("nome", { required: "Campo obrigatório" })}
+            disabled={loading}
           />
           {errors.nome && (
             <p className="text-red-500">{errors.nome.message}</p>
@@ -79,13 +98,21 @@ export default function ProjectForm() {
 
         {/* E-mail */}
         <div>
-          <label>
+          <label htmlFor="email">
             <Mail />
             E-mail
           </label>
           <input
+            id="email"
             type="email"
-            {...register("email", { required: "Campo obrigatório" })}
+            {...register("email", {
+              required: "Campo obrigatório",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Formato de e-mail inválido",
+              },
+            })}
+            disabled={loading}
           />
           {errors.email && (
             <p className="text-red-500">{errors.email.message}</p>
@@ -94,17 +121,28 @@ export default function ProjectForm() {
 
         {/* CPF/CNPJ */}
         <div>
-          <label>
+          <label htmlFor="cpfCnpj">
             <IdCard />
             CPF / CNPJ
           </label>
           <InputMask
+            id="cpfCnpj"
             mask={
               watch("cpfCnpj")?.replace(/\D/g, "").length > 11
                 ? "99.999.999/9999-99"
                 : "999.999.999-99"
             }
-            {...register("cpfCnpj", { required: "Campo obrigatório" })}
+            {...register("cpfCnpj", {
+              required: "Campo obrigatório",
+              validate: (value) => {
+                const digits = value.replace(/\D/g, "");
+                if (digits.length !== 11 && digits.length !== 14) {
+                  return "CPF ou CNPJ inválido";
+                }
+                return true;
+              },
+            })}
+            disabled={loading}
           />
           {errors.cpfCnpj && (
             <p className="text-red-500">{errors.cpfCnpj.message}</p>
@@ -113,11 +151,15 @@ export default function ProjectForm() {
 
         {/* Estado */}
         <div>
-          <label>
+          <label htmlFor="estado">
             <Map />
             Estado
           </label>
-          <select {...register("estado", { required: "Campo obrigatório" })}>
+          <select
+            id="estado"
+            {...register("estado", { required: "Campo obrigatório" })}
+            disabled={loading}
+          >
             <option value="">Selecione o estado</option>
             {Object.keys(estadosECidades).map((uf) => (
               <option key={uf} value={uf}>
@@ -132,11 +174,15 @@ export default function ProjectForm() {
 
         {/* Cidade */}
         <div>
-          <label>
+          <label htmlFor="cidade">
             <MapPin />
             Cidade
           </label>
-          <select {...register("cidade", { required: "Campo obrigatório" })}>
+          <select
+            id="cidade"
+            {...register("cidade", { required: "Campo obrigatório" })}
+            disabled={loading}
+          >
             <option value="">Selecione a cidade</option>
             {cidades.map((cidade) => (
               <option key={cidade} value={cidade}>
@@ -151,15 +197,17 @@ export default function ProjectForm() {
 
         {/* Ramo de Atividade */}
         <div>
-          <label>
+          <label htmlFor="ramoAtividade">
             <Briefcase />
             Ramo de Atividade
           </label>
           <select
+            id="ramoAtividade"
             {...register("ramoAtividade", {
               required: "Selecione o ramo de atividade",
             })}
             defaultValue=""
+            disabled={loading}
           >
             <option value="" disabled>
               -- Selecione o ramo --
@@ -177,13 +225,15 @@ export default function ProjectForm() {
 
         {/* Telefone */}
         <div>
-          <label>
+          <label htmlFor="telefone">
             <Phone />
             Telefone
           </label>
           <InputMask
+            id="telefone"
             mask="(99) 99999-9999"
             {...register("telefone", { required: "Campo obrigatório" })}
+            disabled={loading}
           />
           {errors.telefone && (
             <p className="text-red-500">{errors.telefone.message}</p>
@@ -192,21 +242,27 @@ export default function ProjectForm() {
 
         {/* Sobre o projeto */}
         <div>
-          <label>
+          <label htmlFor="sobre">
             <FileText />
             Sobre o projeto
           </label>
           <textarea
+            id="sobre"
             {...register("sobre", { required: "Campo obrigatório" })}
             rows={3}
+            disabled={loading}
           />
           {errors.sobre && (
             <p className="text-red-500">{errors.sobre.message}</p>
           )}
         </div>
 
-        <button type="submit" className="btn-submit-services-page">
-          Enviar
+        <button
+          type="submit"
+          className="btn-submit-services-page"
+          disabled={loading}
+        >
+          {loading ? "Enviando..." : "Enviar"}
         </button>
       </form>
     </div>
