@@ -2,49 +2,56 @@
 
 namespace App\Entity;
 
+use App\Repository\ServiceRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity]
+#[ORM\Entity(repositoryClass: ServiceRepository::class)]
 class Service
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type:"integer")]
+    #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type:"string", length:255)]
+    #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: "Nome é obrigatório.")]
     private ?string $nome = null;
 
-    #[ORM\Column(type:"string", length:20)]
+    #[ORM\Column(length: 20)]
+    #[Assert\NotBlank(message: "CPF ou CNPJ é obrigatório.")]
+    #[Assert\Length(
+        min: 11,
+        max: 18,
+        minMessage: "CPF/CNPJ inválido.",
+        maxMessage: "CPF/CNPJ inválido."
+    )]
     private ?string $cpfCnpj = null;
 
-    #[ORM\Column(type:"string", length:2)]
+    #[ORM\Column(length: 2)]
+    #[Assert\NotBlank(message: "Estado é obrigatório.")]
     private ?string $estado = null;
 
-    #[ORM\Column(type:"string", length:100)]
+    #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: "Cidade é obrigatória.")]
     private ?string $cidade = null;
 
-    #[ORM\Column(type:"string", length:255)]
+    #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: "E-mail é obrigatório.")]
+    #[Assert\Email(message: "E-mail inválido.")]
     private ?string $email = null;
 
-    #[ORM\Column(type:"string", length:20)]
+    #[ORM\Column(length: 20)]
+    #[Assert\NotBlank(message: "Telefone é obrigatório.")]
     private ?string $telefone = null;
 
-    #[ORM\Column(type:"string", length:100)]
-    private ?string $ramoAtividade = null;
-
-    #[ORM\Column(type:"text")]
+    #[ORM\Column(type: "text")]
+    #[Assert\NotBlank(message: "O campo 'Sobre o projeto' é obrigatório.")]
     private ?string $sobre = null;
 
-    #[ORM\Column(type:"datetime")]
-    private \DateTimeInterface $createdAt;
-
-    public function __construct()
-    {
-        $this->createdAt = new \DateTimeImmutable();
-    }
-
-    // Getters e Setters abaixo...
+    #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: "Ramo de atividade é obrigatório.")]
+    private ?string $ramoAtividade = null;
 
     public function getId(): ?int
     {
@@ -56,7 +63,7 @@ class Service
         return $this->nome;
     }
 
-    public function setNome(string $nome): self
+    public function setNome(string $nome): static
     {
         $this->nome = $nome;
         return $this;
@@ -67,7 +74,7 @@ class Service
         return $this->cpfCnpj;
     }
 
-    public function setCpfCnpj(string $cpfCnpj): self
+    public function setCpfCnpj(string $cpfCnpj): static
     {
         $this->cpfCnpj = $cpfCnpj;
         return $this;
@@ -78,7 +85,7 @@ class Service
         return $this->estado;
     }
 
-    public function setEstado(string $estado): self
+    public function setEstado(string $estado): static
     {
         $this->estado = $estado;
         return $this;
@@ -89,7 +96,7 @@ class Service
         return $this->cidade;
     }
 
-    public function setCidade(string $cidade): self
+    public function setCidade(string $cidade): static
     {
         $this->cidade = $cidade;
         return $this;
@@ -100,7 +107,7 @@ class Service
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail(string $email): static
     {
         $this->email = $email;
         return $this;
@@ -111,20 +118,9 @@ class Service
         return $this->telefone;
     }
 
-    public function setTelefone(string $telefone): self
+    public function setTelefone(string $telefone): static
     {
         $this->telefone = $telefone;
-        return $this;
-    }
-
-    public function getRamoAtividade(): ?string
-    {
-        return $this->ramoAtividade;
-    }
-
-    public function setRamoAtividade(string $ramoAtividade): self
-    {
-        $this->ramoAtividade = $ramoAtividade;
         return $this;
     }
 
@@ -133,14 +129,20 @@ class Service
         return $this->sobre;
     }
 
-    public function setSobre(string $sobre): self
+    public function setSobre(string $sobre): static
     {
         $this->sobre = $sobre;
         return $this;
     }
 
-    public function getCreatedAt(): \DateTimeInterface
+    public function getRamoAtividade(): ?string
     {
-        return $this->createdAt;
+        return $this->ramoAtividade;
+    }
+
+    public function setRamoAtividade(string $ramoAtividade): static
+    {
+        $this->ramoAtividade = $ramoAtividade;
+        return $this;
     }
 }
