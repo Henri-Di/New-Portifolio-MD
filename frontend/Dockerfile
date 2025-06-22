@@ -15,7 +15,7 @@ FROM nginx:alpine
 # Copia build do Vite (pasta dist/)
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copia arquivo de configuração customizado para Vite SPA (fallback)
+# Copia arquivo de configuração customizado para SPA
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
