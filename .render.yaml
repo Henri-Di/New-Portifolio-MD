@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: symfony-backend
+    env: docker
+    rootDir: backend
+    plan: free
+    region: oregon
+    envVars:
+      - key: APP_ENV
+        value: prod
+      - key: APP_SECRET
+        value: JwtK3y$2025#Secure
+      - key: DATABASE_URL
+        value: mysql://appuser:apppassword@db:3306/portifolio_web"
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: react-frontend
+    env: docker
+    rootDir: frontend
+    plan: free
+    region: oregon
+    envVars:
+      - key: VITE_API_URL
+        value: https://symfony-backend.onrender.com/api
