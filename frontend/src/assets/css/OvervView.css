@@ -1,5 +1,5 @@
 /* ============================
-   RESET BÁSICO GLOBAL
+   RESET GLOBAL BÁSICO
    ============================
    Remove margens e padding padrão de todos os elementos
    e aplica box-sizing para melhor controle de largura e altura.
@@ -26,16 +26,17 @@ body {
 /* ============================
    CABEÇALHO - LOGO TOPO DA PÁGINA
    ============================
-   Container com fundo preto, padding e arredondamento.
+   Container com fundo preto, padding e bordas arredondadas.
    Logo em texto branco com sombra e tamanho grande.
    Força spans internos do logo a ficarem brancos.
 */
 .container-logo-page {
   background-color: #000000;
   width: 100%;
-  padding: 0.888888rem;
+  padding: 0.8889rem;
   border-radius: 5px;
   text-align: center;
+  margin-bottom: 1rem; /* Espaço abaixo para separar do conteúdo */
 }
 
 .text-logo-page {
@@ -53,13 +54,12 @@ body {
    NAVBAR - BARRA DE NAVEGAÇÃO
    ============================
    Container com borda, espaçamento e layout flexível para múltiplas linhas.
-   Links com espaçamento horizontal, cor padrão, e animação de underline colorida ao passar o mouse.
+   Links com espaçamento horizontal, cor padrão e animação de underline colorida ao passar o mouse.
 */
 .container-navbar-ui {
   border: 1px solid #000000;
   margin-top: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
   border-radius: 5px;
 
   display: flex;
@@ -69,13 +69,13 @@ body {
 
 .link-navbar {
   gap: 5px;
-  margin-left: 1.111111rem;
-  margin-right: 1.111111rem;
-  padding: 0.888888rem;
+  margin: 0 1.1111rem;
+  padding: 0.8889rem;
   color: #000;
   position: relative;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: 600;
 }
 
 /* Linha de destaque animada abaixo do link */
@@ -108,14 +108,12 @@ body {
 */
 @media (max-width: 600px) {
   .container-navbar-ui {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 0;
     margin-top: 0.5rem;
   }
 
   .link-navbar {
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
+    margin: 0 0.25rem;
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
 
@@ -128,8 +126,8 @@ body {
 /* ============================
    CONTAINER PRINCIPAL DE CARDS
    ============================
-   Container centralizado com grid para organização dos cards,
-   responsivo para ajustar colunas em telas maiores.
+   Container centralizado com grid para organização dos cards.
+   Responsivo para ajustar colunas em telas maiores.
 */
 .container-father-cards-page {
   padding: 1rem;
@@ -138,7 +136,6 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  box-sizing: border-box;
 }
 
 /* Ajusta para múltiplas colunas automáticas a partir de 480px */
@@ -195,7 +192,7 @@ body {
    Margin-top auto empurra o botão para baixo do card flexível.
 */
 .bg-button-color {
-  padding: 0.555555rem;
+  padding: 0.5556rem;
   background-color: transparent;
   border: 1px solid #000000;
   color: #000000;
@@ -224,12 +221,13 @@ body {
 .footer-text {
   background-color: #000000;
   width: 100%;
-  padding: 1.888888rem;
+  padding: 1.8889rem;
   color: white;
   text-align: center;
   font-size: 1rem;
   font-weight: 700;
   border-radius: 5px;
+  margin-top: 5rem;
 }
 
 /* ============================
@@ -322,7 +320,9 @@ span {
 */
 .text-btn-home-page,
 .text-btn-project-page {
-  gap: 0.255555rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2556rem;
 }
 
 /* ============================
@@ -332,7 +332,6 @@ span {
    Layout vertical com espaçamento entre campos.
    Tamanho máximo e centrado horizontalmente.
 */
-
 form {
   background-color: #ffffff;
   padding: 2rem 1.5rem;
@@ -364,7 +363,7 @@ label {
   font-weight: 600;
   color: #000000;
   font-size: 1rem;
-  padding-bottom: 0.555555rem;
+  padding-bottom: 0.5556rem;
 }
 
 /* Inputs, selects e textareas com estilo uniforme */
@@ -398,6 +397,7 @@ textarea:focus {
 p.text-red-500 {
   font-size: 0.85rem;
   margin-top: 0.25rem;
+  color: #dc2626; /* vermelho típico para erro */
 }
 
 /* Botão de envio do formulário */
@@ -460,6 +460,10 @@ label svg {
   }
 }
 
+/* ============================
+   ALERTAS, CONTAINERS E TEXTO DIVERSOS
+   ============================
+*/
 .alert-project-card {
   padding: 1.5rem;
   border-radius: 5px;
@@ -467,18 +471,19 @@ label svg {
   color: #000000;
   font-weight: bold;
   text-align: justify;
+  font-size: 1rem;
 }
 
 .container-cv-page,
 .container-news-page,
 .container-blog-page {
-  margin-left: 3.555555rem;
-  margin-right: 3.555555rem;
+  margin-left: 3.5556rem;
+  margin-right: 3.5556rem;
 }
 
 .text-cv-page,
 .text-alert-ui {
-  margin-top: 3.333333rem;
+  margin-top: 3.3333rem;
   font-size: 16px;
   font-weight: bold;
 }
@@ -489,12 +494,14 @@ label svg {
   gap: 0.5rem;
 }
 
+/* Imagens de projetos */
 .img-card-projects {
   width: 25%;
   height: auto;
   border-radius: 5px;
 }
 
+/* Vídeo com borda e responsivo */
 video {
   border: 1px solid #000;
   max-width: 100%;
@@ -502,6 +509,10 @@ video {
   border-radius: 5px;
 }
 
+/* ============================
+   RESPONSIVIDADE GERAL PARA TELAS MÉDIAS E PEQUENAS
+   ============================
+*/
 @media (max-width: 1024px) {
   .container-cv-page {
     margin-left: 2rem;
@@ -547,15 +558,5 @@ video {
     margin-top: -10rem;
     margin-left: 0.25rem;
     margin-right: 1rem;
-
   }
-  
-  .container-logo-page{
-    margin-bottom: 1rem;
-  }
-
-  .footer-text{
-    margin-top: 5rem;
-  }
-
 }
