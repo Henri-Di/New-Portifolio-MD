@@ -9,14 +9,19 @@ import Contact from "./pages/public/Contact";
 import Projects from "./pages/public/Projects";
 import CV from "./pages/public/CV";
 import News from "./pages/public/News";
+import Services from "./pages/public/Services";
 import Blog  from "./pages/public/Blog";
+import ProjectOne from "./pages/public/ProjectOne";
+import ProjectTwo from "./pages/public/ProjectTwo";
+import ProjectThree from "./pages/public/ProjectThree";
 
 import Login from "./pages/admin/Login";
 import Dashboard from "./pages/admin/Dashboard";
 import ProjectManager from "./pages/admin/ProjectsManager";
 import SkillManager from "./pages/admin/SkillsManager";
 import Skills from "./pages/public/Skills";
-import Services from "./pages/public/Services";
+
+
 
 function App() {
   return (
@@ -33,6 +38,9 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/projectone" element={<ProjectOne />} />
+          <Route path="/projecttwo" element={<ProjectTwo />} />
+          <Route path="/projectthree" element={<ProjectThree />} />
     
 
           {/* Rotas administrativas protegidas */}
