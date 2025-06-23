@@ -40,7 +40,7 @@ export default function Projects() {
             <p className="text-sm text-gray-700 text-justify">
               O sistema de gestão de estoque foi desenvolvido para atender às necessidades específicas de controle e monitoramento de inventário em dois datacenters da Caixa Econômica Federal, localizados no Distrito Federal, sob a responsabilidade do Departamento de Instalações. Este sistema visa otimizar a operação de inventário em ambientes corporativos de grande porte, com um alto nível de segurança e controle rigoroso de dados, garantindo a integridade e a disponibilidade das informações de estoque.
             </p>
-            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/projectone">
+            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/project1">
               <FolderOpen size={18} /> Ver Projeto
             </Link>
           </div>
@@ -52,7 +52,7 @@ export default function Projects() {
             <p className="text-sm text-gray-700 text-justify">
               O Aurum é uma aplicação web completa desenvolvida para atender às necessidades de Ponto de Venda (PDV) e Gestão Empresarial, ideal para empresas que buscam eficiência, controle e praticidade em suas operações comerciais. Projetado com foco na usabilidade e na integração de processos, o sistema oferece uma ampla gama de funcionalidades que abrangem desde o controle de caixa, estoque, vendas e orçamentos, até a gestão de pessoas e outros recursos estratégicos voltados à administração do negócio.
             </p>
-            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/projecttwo">
+            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/project2">
               <FolderOpen size={18} /> Ver Projeto
             </Link>
           </div>
@@ -64,7 +64,7 @@ export default function Projects() {
             <p className="text-sm text-gray-700 text-justify">
               O BandsCloud é uma plataforma web inovadora criada para fortalecer a conexão entre artistas independentes, estabelecimentos culturais e fãs de música. Pensada para fomentar a cena musical independente, a aplicação oferece um espaço onde músicos podem divulgar seus trabalhos, encontrar oportunidades para se apresentarem ao vivo e estabelecer parcerias com bares, casas de shows e outros locais que buscam talentos autênticos.
             </p>
-            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/projectthree">
+            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page" to="/project3">
               <FolderOpen size={18} /> Ver Projeto
             </Link>
           </div>
@@ -78,7 +78,7 @@ export default function Projects() {
               ⚠️ Página em desenvolvimento. Este projeto ainda está em fase de construção e, em breve, será adicionado à coleção de projetos disponíveis neste portfólio.
             </div>
             <br/ >
-            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page mt-4" to="/homeW">
+            <Link className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page mt-4" to="/home">
               <FolderOpen size={18} /> Ver Projeto
             </Link>
           </div>

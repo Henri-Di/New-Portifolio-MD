@@ -11,9 +11,9 @@ import CV from "./pages/public/CV";
 import News from "./pages/public/News";
 import Services from "./pages/public/Services";
 import Blog  from "./pages/public/Blog";
-import ProjectOne from "./pages/public/ProjectOne";
-import ProjectTwo from "./pages/public/ProjectTwo";
-import ProjectThree from "./pages/public/ProjectThree";
+import Project1 from "./pages/public/Project1";
+import Project2 from "./pages/public/Project2";
+import Project3 from "./pages/public/Project3";
 
 import Login from "./pages/admin/Login";
 import Dashboard from "./pages/admin/Dashboard";
@@ -38,9 +38,9 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/projectone" element={<ProjectOne />} />
-          <Route path="/projecttwo" element={<ProjectTwo />} />
-          <Route path="/projectthree" element={<ProjectThree />} />
+          <Route path="/project1" element={<Project1 />} />
+          <Route path="/project2" element={<Project2 />} />
+          <Route path="/project3" element={<Project3 />} />
     
 
           {/* Rotas administrativas protegidas */}
