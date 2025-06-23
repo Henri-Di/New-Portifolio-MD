@@ -60,24 +60,11 @@ export default function ProjectOne() {
 
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2">Aplicação Web</h2>
-            <p className="text-sm text-gray-700 text-justify">
-              Confira a aplicação web do Sistema de Inventário da Caixa Econômica, projetada para facilitar a gestão de itens e ativos dentro de um datacenter.
-            <br />
-            <br />
-            Link do repositório:{' '}
-            <a
-            href="https://github.com/Henri-Di/sistema-inventario"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-violet-800 underline hover:text-violet-600"
-            >
-          github.com/Henri-Di/sistema-inventario
-          </a>
-          </p>
+ 
           <video 
             className="mx-auto rounded-lg" 
             width="225" 
-            height="150" 
+            height="310" 
             controls 
             preload="metadata"
             >

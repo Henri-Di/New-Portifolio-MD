@@ -62,24 +62,11 @@ export default function ProjectThree() {
 
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2">Aplicação Web</h2>
-            <p className="text-sm text-gray-700 text-justify">
-                Confira a aplicação web do BandsCloud, uma plataforma desenvolvida para conectar artistas independentes, estabelecimentos e fãs de música, facilitando a divulgação de trabalhos, agendamento de shows e descoberta de novos talentos.
-            <br />
-            <br/ >
-                Link do repositório:{' '}
-            <a
-            href="https://github.com/Henri-Di/bandscloud-doc-sound"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-violet-800 underline hover:text-violet-600"
-            >
-            github.com/Henri-Di/bandscloud-doc-sound
-            </a>
-            </p>
+  
             <video 
             className="mx-auto rounded-lg" 
             width="225" 
-            height="150" 
+            height="340" 
             controls 
             preload="metadata"
             >

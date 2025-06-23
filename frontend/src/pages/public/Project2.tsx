@@ -60,24 +60,11 @@ export default function ProjectTwo() {
 
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2">Aplicação Web</h2>
-            <p className="text-sm text-gray-700 text-justify">
-                Confira a aplicação web do sistema Aurum, projetada para simplificar e otimizar a gestão de vendas, estoque e operações comerciais em pontos de venda e ambientes empresariais. Aplicação completa para a área de vendas e controle empresarial.
-            <br />
-            <br/ >
-                Link do repositório:{' '}
-            <a
-            href="https://github.com/Henri-Di/aurum-doc-pdv"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-violet-800 underline hover:text-violet-600"
-            >
-            github.com/Henri-Di/aurum-doc-pdv
-            </a>
-            </p>
+
             <video 
             className="mx-auto rounded-lg" 
             width="225" 
-            height="150" 
+            height="330" 
             controls 
             preload="metadata"
             >

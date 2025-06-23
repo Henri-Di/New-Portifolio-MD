@@ -509,7 +509,6 @@ label svg {
 video {
   border: 1px solid #000;
   max-width: 100%;
-  height: auto;
   border-radius: 5px;
 }
 
