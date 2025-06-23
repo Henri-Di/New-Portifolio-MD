@@ -27,6 +27,7 @@
     "@tailwindcss/postcss": "^4.1.8",
     "@types/axios": "^0.9.36",
     "@types/jwt-decode": "^2.2.1",
+    "@types/node": "^24.0.3",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@types/react-helmet": "^6.1.11",
