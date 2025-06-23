@@ -51,7 +51,6 @@ export default function FormService() {
     setError,
   } = useForm<FormData>();
 
-  // Usando o hook personalizado para submit
   const { submit, loading, serverError } = useSubmitForm<FormData>({
     url: "/api/services",
     setError,
@@ -63,66 +62,82 @@ export default function FormService() {
   const onSubmit = async (data: FormData) => {
     const result = await submit(data);
     if (result) {
-      // Sucesso, limpa formulário
       reset();
-      // Pode adicionar mensagem de sucesso, log, etc
       console.log("Dados enviados com sucesso:", result);
     }
   };
 
   return (
     <div className="min-h-screen w-screen bg-gray-900 flex items-center justify-center px-4 py-10">
-      <form onSubmit={handleSubmit(onSubmit)} className="form">
-        <h4 className="title-form-services-page">Solicitar Orçamento</h4>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="w-full max-w-lg bg-gray-800 p-6 rounded-md shadow-lg"
+      >
+        <h4 className="text-2xl font-semibold text-white mb-6 text-center">
+          Solicitar Orçamento
+        </h4>
 
         {serverError && (
-          <p className="text-red-500 mb-4 font-semibold">{serverError}</p>
+          <p className="text-red-500 mb-4 font-semibold text-center">
+            {serverError}
+          </p>
         )}
 
-        {/* Nome completo */}
-        <div>
-          <label htmlFor="nome">
-            <User />
-            Nome completo
-          </label>
-          <input
-            id="nome"
-            type="text"
-            {...register("nome", { required: "Campo obrigatório" })}
-            disabled={loading}
-          />
-          {errors.nome && (
-            <p className="text-red-500">{errors.nome.message}</p>
-          )}
-        </div>
-
-        {/* E-mail */}
-        <div>
-          <label htmlFor="email">
-            <Mail />
-            E-mail
-          </label>
-          <input
-            id="email"
-            type="email"
-            {...register("email", {
+        {/* Campo padrão para cada input com label */}
+        {[
+          {
+            id: "nome",
+            label: "Nome completo",
+            icon: <User className="inline mr-2" />,
+            type: "text",
+            validation: { required: "Campo obrigatório" },
+          },
+          {
+            id: "email",
+            label: "E-mail",
+            icon: <Mail className="inline mr-2" />,
+            type: "email",
+            validation: {
               required: "Campo obrigatório",
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                 message: "Formato de e-mail inválido",
               },
-            })}
-            disabled={loading}
-          />
-          {errors.email && (
-            <p className="text-red-500">{errors.email.message}</p>
-          )}
-        </div>
+            },
+          },
+        ].map(({ id, label, icon, type, validation }) => (
+          <div key={id} className="mb-4">
+            <label
+              htmlFor={id}
+              className="text-gray-300 mb-1 block flex items-center font-medium"
+            >
+              {icon}
+              {label}
+            </label>
+            <input
+              id={id}
+              type={type}
+              {...register(id as keyof FormData, validation)}
+              disabled={loading}
+              className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                errors[id as keyof FormData] ? "border-red-500" : "border-gray-600"
+              }`}
+            />
+            {errors[id as keyof FormData] && (
+              <p className="text-red-500 mt-1 text-sm">
+                {errors[id as keyof FormData]?.message}
+              </p>
+            )}
+          </div>
+        ))}
 
         {/* CPF/CNPJ */}
-        <div>
-          <label htmlFor="cpfCnpj">
-            <IdCard />
+        <div className="mb-4">
+          <label
+            htmlFor="cpfCnpj"
+            className="text-gray-300 mb-1 block flex items-center font-medium"
+          >
+            <IdCard className="inline mr-2" />
             CPF / CNPJ
           </label>
           <InputMask
@@ -143,62 +158,83 @@ export default function FormService() {
               },
             })}
             disabled={loading}
+            className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              errors.cpfCnpj ? "border-red-500" : "border-gray-600"
+            }`}
           />
           {errors.cpfCnpj && (
-            <p className="text-red-500">{errors.cpfCnpj.message}</p>
+            <p className="text-red-500 mt-1 text-sm">{errors.cpfCnpj.message}</p>
           )}
         </div>
 
-        {/* Estado */}
-        <div>
-          <label htmlFor="estado">
-            <Map />
-            Estado
-          </label>
-          <select
-            id="estado"
-            {...register("estado", { required: "Campo obrigatório" })}
-            disabled={loading}
-          >
-            <option value="">Selecione o estado</option>
-            {Object.keys(estadosECidades).map((uf) => (
-              <option key={uf} value={uf}>
-                {uf}
-              </option>
-            ))}
-          </select>
-          {errors.estado && (
-            <p className="text-red-500">{errors.estado.message}</p>
-          )}
-        </div>
+        {/* Estado e Cidade lado a lado em telas md+ */}
+        <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Estado */}
+          <div>
+            <label
+              htmlFor="estado"
+              className="text-gray-300 mb-1 block flex items-center font-medium"
+            >
+              <Map className="inline mr-2" />
+              Estado
+            </label>
+            <select
+              id="estado"
+              {...register("estado", { required: "Campo obrigatório" })}
+              disabled={loading}
+              className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                errors.estado ? "border-red-500" : "border-gray-600"
+              }`}
+            >
+              <option value="">Selecione o estado</option>
+              {Object.keys(estadosECidades).map((uf) => (
+                <option key={uf} value={uf}>
+                  {uf}
+                </option>
+              ))}
+            </select>
+            {errors.estado && (
+              <p className="text-red-500 mt-1 text-sm">{errors.estado.message}</p>
+            )}
+          </div>
 
-        {/* Cidade */}
-        <div>
-          <label htmlFor="cidade">
-            <MapPin />
-            Cidade
-          </label>
-          <select
-            id="cidade"
-            {...register("cidade", { required: "Campo obrigatório" })}
-            disabled={loading}
-          >
-            <option value="">Selecione a cidade</option>
-            {cidades.map((cidade) => (
-              <option key={cidade} value={cidade}>
-                {cidade}
-              </option>
-            ))}
-          </select>
-          {errors.cidade && (
-            <p className="text-red-500">{errors.cidade.message}</p>
-          )}
+          {/* Cidade */}
+          <div>
+            <label
+              htmlFor="cidade"
+              className="text-gray-300 mb-1 block flex items-center font-medium"
+            >
+              <MapPin className="inline mr-2" />
+              Cidade
+            </label>
+            <select
+              id="cidade"
+              {...register("cidade", { required: "Campo obrigatório" })}
+              disabled={loading}
+              className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                errors.cidade ? "border-red-500" : "border-gray-600"
+              }`}
+            >
+              <option value="">Selecione a cidade</option>
+              {cidades.map((cidade) => (
+                <option key={cidade} value={cidade}>
+                  {cidade}
+                </option>
+              ))}
+            </select>
+            {errors.cidade && (
+              <p className="text-red-500 mt-1 text-sm">{errors.cidade.message}</p>
+            )}
+          </div>
         </div>
 
         {/* Ramo de Atividade */}
-        <div>
-          <label htmlFor="ramoAtividade">
-            <Briefcase />
+        <div className="mb-4">
+          <label
+            htmlFor="ramoAtividade"
+            className="text-gray-300 mb-1 block flex items-center font-medium"
+          >
+            <Briefcase className="inline mr-2" />
             Ramo de Atividade
           </label>
           <select
@@ -208,6 +244,9 @@ export default function FormService() {
             })}
             defaultValue=""
             disabled={loading}
+            className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              errors.ramoAtividade ? "border-red-500" : "border-gray-600"
+            }`}
           >
             <option value="" disabled>
               -- Selecione o ramo --
@@ -219,14 +258,17 @@ export default function FormService() {
             ))}
           </select>
           {errors.ramoAtividade && (
-            <p className="text-red-500">{errors.ramoAtividade.message}</p>
+            <p className="text-red-500 mt-1 text-sm">{errors.ramoAtividade.message}</p>
           )}
         </div>
 
         {/* Telefone */}
-        <div>
-          <label htmlFor="telefone">
-            <Phone />
+        <div className="mb-4">
+          <label
+            htmlFor="telefone"
+            className="text-gray-300 mb-1 block flex items-center font-medium"
+          >
+            <Phone className="inline mr-2" />
             Telefone
           </label>
           <InputMask
@@ -234,16 +276,22 @@ export default function FormService() {
             mask="(99) 99999-9999"
             {...register("telefone", { required: "Campo obrigatório" })}
             disabled={loading}
+            className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              errors.telefone ? "border-red-500" : "border-gray-600"
+            }`}
           />
           {errors.telefone && (
-            <p className="text-red-500">{errors.telefone.message}</p>
+            <p className="text-red-500 mt-1 text-sm">{errors.telefone.message}</p>
           )}
         </div>
 
         {/* Sobre o projeto */}
-        <div>
-          <label htmlFor="sobre">
-            <FileText />
+        <div className="mb-6">
+          <label
+            htmlFor="sobre"
+            className="text-gray-300 mb-1 block flex items-center font-medium"
+          >
+            <FileText className="inline mr-2" />
             Sobre o projeto
           </label>
           <textarea
@@ -251,16 +299,19 @@ export default function FormService() {
             {...register("sobre", { required: "Campo obrigatório" })}
             rows={3}
             disabled={loading}
+            className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              errors.sobre ? "border-red-500" : "border-gray-600"
+            }`}
           />
           {errors.sobre && (
-            <p className="text-red-500">{errors.sobre.message}</p>
+            <p className="text-red-500 mt-1 text-sm">{errors.sobre.message}</p>
           )}
         </div>
 
         <button
           type="submit"
-          className="btn-submit-services-page"
           disabled={loading}
+          className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-md transition"
         >
           {loading ? "Enviando..." : "Enviar"}
         </button>
@@ -268,3 +319,4 @@ export default function FormService() {
     </div>
   );
 }
+

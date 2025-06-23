@@ -108,16 +108,20 @@ body {
 */
 @media (max-width: 600px) {
   .container-navbar-ui {
+    width: 100%;
     padding: 0.5rem 0;
     margin-top: 0.5rem;
+    border: none;
   }
 
   .link-navbar {
-    margin: 0 0.25rem;
+    margin: 0.25rem 0.25rem;
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
+    border-radius: 5px;
+    border: 1px solid #000000;
 
-    flex: 0 0 50%; /* ocupa 50% da largura do container */
+    flex: 0 0 95.555555%; /* ocupa 95% da largura do container */
     box-sizing: border-box;
     text-align: center;
   }
@@ -440,7 +444,7 @@ label svg {
   form {
     padding: 1.25rem 1rem;
     max-width: 100%;
-    margin: 1.5rem 1rem;
+    margin: 1.5rem 1.5rem;
   }
 
   label {
@@ -530,10 +534,13 @@ video {
 }
 
 @media (max-width: 768px) {
-  .container-cv-page {
-    margin-left: 1rem;
-    margin-right: 1rem;
+  .container-cv-page,
+  .container-news-page,
+  .container-blog-page {
+    margin-left: 0rem;
+    
   }
+
 
   .img-card-projects {
     width: 25%;
@@ -552,11 +559,3 @@ video {
   }
 }
 
-@media (max-width: 768px) {
-  .container-news-page,
-  .container-blog-page {
-    margin-top: -10rem;
-    margin-left: 0.25rem;
-    margin-right: 1rem;
-  }
-}

@@ -27,10 +27,6 @@ export default function CV() {
       </Helmet>
 
       <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center px-4 main-container container-cv-page">
-        <br />
-        <br />
-        <br />
-        <br />
         <Header />
         <Navbar />
 
@@ -50,6 +46,10 @@ export default function CV() {
             Baixar Currículo (PDF)
           </a>
         </section>
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <Footer />
