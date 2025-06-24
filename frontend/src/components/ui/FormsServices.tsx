@@ -11,7 +11,7 @@ import {
   Phone,
   FileText,
 } from "lucide-react";
-import { useSubmitForm } from "../../hooks/useSubmitForm"; 
+import { useSubmitForm } from "../../hooks/useSubmitForm";
 
 type FormData = {
   nome: string;
@@ -68,10 +68,10 @@ export default function FormService() {
   };
 
   return (
-    <div className="min-h-screen w-screen bg-gray-900 flex items-center justify-center px-4 py-10">
+    <div className="min-h-screen w-full bg-gray-900 flex items-center justify-center px-4 py-10 overflow-x-hidden">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-lg bg-gray-800 p-6 rounded-md shadow-lg"
+        className="w-full max-w-lg bg-gray-800 p-4 sm:p-6 rounded-md shadow-lg"
       >
         <h4 className="text-2xl font-semibold text-white mb-6 text-center">
           Solicitar Orçamento
@@ -83,7 +83,6 @@ export default function FormService() {
           </p>
         )}
 
-        {/* Campo padrão para cada input com label */}
         {[
           {
             id: "nome",
@@ -109,7 +108,7 @@ export default function FormService() {
           <div key={id} className="mb-4">
             <label
               htmlFor={id}
-              className="text-gray-300 mb-1 block flex items-center font-medium"
+              className="text-gray-300 mb-1 block flex items-center font-medium text-sm md:text-base"
             >
               {icon}
               {label}
@@ -119,7 +118,7 @@ export default function FormService() {
               type={type}
               {...register(id as keyof FormData, validation)}
               disabled={loading}
-              className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              className={`w-full rounded-md border bg-gray-900 px-3 py-2 text-sm md:text-base text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                 errors[id as keyof FormData] ? "border-red-500" : "border-gray-600"
               }`}
             />
@@ -131,11 +130,10 @@ export default function FormService() {
           </div>
         ))}
 
-        {/* CPF/CNPJ */}
         <div className="mb-4">
           <label
             htmlFor="cpfCnpj"
-            className="text-gray-300 mb-1 block flex items-center font-medium"
+            className="text-gray-300 mb-1 block flex items-center font-medium text-sm md:text-base"
           >
             <IdCard className="inline mr-2" />
             CPF / CNPJ
@@ -158,7 +156,7 @@ export default function FormService() {
               },
             })}
             disabled={loading}
-            className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+            className={`w-full rounded-md border bg-gray-900 px-3 py-2 text-sm md:text-base text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
               errors.cpfCnpj ? "border-red-500" : "border-gray-600"
             }`}
           />
@@ -167,13 +165,11 @@ export default function FormService() {
           )}
         </div>
 
-        {/* Estado e Cidade lado a lado em telas md+ */}
-        <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Estado */}
+        <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <div>
             <label
               htmlFor="estado"
-              className="text-gray-300 mb-1 block flex items-center font-medium"
+              className="text-gray-300 mb-1 block flex items-center font-medium text-sm md:text-base"
             >
               <Map className="inline mr-2" />
               Estado
@@ -182,7 +178,7 @@ export default function FormService() {
               id="estado"
               {...register("estado", { required: "Campo obrigatório" })}
               disabled={loading}
-              className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              className={`w-full rounded-md border bg-gray-900 px-3 py-2 text-sm md:text-base text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                 errors.estado ? "border-red-500" : "border-gray-600"
               }`}
             >
@@ -198,11 +194,10 @@ export default function FormService() {
             )}
           </div>
 
-          {/* Cidade */}
           <div>
             <label
               htmlFor="cidade"
-              className="text-gray-300 mb-1 block flex items-center font-medium"
+              className="text-gray-300 mb-1 block flex items-center font-medium text-sm md:text-base"
             >
               <MapPin className="inline mr-2" />
               Cidade
@@ -211,7 +206,7 @@ export default function FormService() {
               id="cidade"
               {...register("cidade", { required: "Campo obrigatório" })}
               disabled={loading}
-              className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              className={`w-full rounded-md border bg-gray-900 px-3 py-2 text-sm md:text-base text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                 errors.cidade ? "border-red-500" : "border-gray-600"
               }`}
             >
@@ -228,11 +223,10 @@ export default function FormService() {
           </div>
         </div>
 
-        {/* Ramo de Atividade */}
         <div className="mb-4">
           <label
             htmlFor="ramoAtividade"
-            className="text-gray-300 mb-1 block flex items-center font-medium"
+            className="text-gray-300 mb-1 block flex items-center font-medium text-sm md:text-base"
           >
             <Briefcase className="inline mr-2" />
             Ramo de Atividade
@@ -244,7 +238,7 @@ export default function FormService() {
             })}
             defaultValue=""
             disabled={loading}
-            className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+            className={`w-full rounded-md border bg-gray-900 px-3 py-2 text-sm md:text-base text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
               errors.ramoAtividade ? "border-red-500" : "border-gray-600"
             }`}
           >
@@ -262,11 +256,10 @@ export default function FormService() {
           )}
         </div>
 
-        {/* Telefone */}
         <div className="mb-4">
           <label
             htmlFor="telefone"
-            className="text-gray-300 mb-1 block flex items-center font-medium"
+            className="text-gray-300 mb-1 block flex items-center font-medium text-sm md:text-base"
           >
             <Phone className="inline mr-2" />
             Telefone
@@ -276,7 +269,7 @@ export default function FormService() {
             mask="(99) 99999-9999"
             {...register("telefone", { required: "Campo obrigatório" })}
             disabled={loading}
-            className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+            className={`w-full rounded-md border bg-gray-900 px-3 py-2 text-sm md:text-base text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
               errors.telefone ? "border-red-500" : "border-gray-600"
             }`}
           />
@@ -285,11 +278,10 @@ export default function FormService() {
           )}
         </div>
 
-        {/* Sobre o projeto */}
         <div className="mb-6">
           <label
             htmlFor="sobre"
-            className="text-gray-300 mb-1 block flex items-center font-medium"
+            className="text-gray-300 mb-1 block flex items-center font-medium text-sm md:text-base"
           >
             <FileText className="inline mr-2" />
             Sobre o projeto
@@ -299,7 +291,7 @@ export default function FormService() {
             {...register("sobre", { required: "Campo obrigatório" })}
             rows={3}
             disabled={loading}
-            className={`w-full rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-gray-100 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+            className={`w-full rounded-md border bg-gray-900 px-3 py-2 text-sm md:text-base text-gray-100 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
               errors.sobre ? "border-red-500" : "border-gray-600"
             }`}
           />
@@ -311,7 +303,7 @@ export default function FormService() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-md transition"
+          className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-md transition text-sm md:text-base"
         >
           {loading ? "Enviando..." : "Enviar"}
         </button>
@@ -319,4 +311,3 @@ export default function FormService() {
     </div>
   );
 }
-
