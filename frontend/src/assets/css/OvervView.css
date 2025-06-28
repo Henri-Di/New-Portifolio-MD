@@ -443,7 +443,7 @@ label svg {
 @media (max-width: 640px) {
   form {
     padding: 1.25rem 1rem;
-    max-width: 100%;
+    max-width: 85%;
     margin: 1.5rem 1.5rem;
   }
 
