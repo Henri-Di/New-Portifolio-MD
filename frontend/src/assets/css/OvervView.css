@@ -282,24 +282,34 @@ span {
    padding lateral maior em telas grandes para layout espaçado.
 */
 .main-container,
-.main-container-sevices-page {
+.main-container-services-page {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   padding: 1rem;
 }
 
+/* Telas a partir de 640px (sm) */
+@media (min-width: 640px) {
+  .main-container-services-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Telas a partir de 1024px (lg) */
 @media (min-width: 1024px) {
   .main-container {
     padding-left: 9rem;
     padding-right: 1rem;
   }
 
-  .main-container-sevices-page {
+  .main-container-services-page {
     padding-left: 10%;
     padding-right: 10%;
   }
 }
+
 
 /* ============================
    IMAGENS DE CARDS (SKILLS)
