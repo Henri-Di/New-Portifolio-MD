@@ -41,17 +41,16 @@ export default function CV() {
             target="_blank"
             rel="noopener noreferrer"
             download
-            className="inline-flex items-center gap-2 bg-button-color text-btn-home-page font-semibold py-2 px-4 rounded-lg shadow-md transition hover:brightness-90"
+            className="inline-flex items-center gap-2 bg-button-color text-btn-cv-page font-semibold py-2 px-4 rounded-lg shadow-md transition hover:brightness-90 btn-cv-page"
           >
             <FileDown size={18} />
             Baixar Currículo (PDF)
           </a>
+
         </section>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br /> 
         <br />
         <Footer />
       </main>

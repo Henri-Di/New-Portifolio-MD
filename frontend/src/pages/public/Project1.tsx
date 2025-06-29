@@ -61,11 +61,10 @@ export default function ProjectOne() {
 
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2">Aplicação Web</h2>
- 
           <video 
             className="mx-auto rounded-lg" 
             width="225" 
-            height="310" 
+            height="305" 
             controls 
             preload="metadata"
             >
