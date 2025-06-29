@@ -92,9 +92,6 @@ export default function Contact() {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
         <Footer />
       </main>
     </>
