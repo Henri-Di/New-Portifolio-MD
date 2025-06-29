@@ -557,17 +557,21 @@ label svg {
     font-size: 0.95rem;
     padding: 0.55rem 0.7rem;
   }
-
-  .btn-submit-services-page {
-    font-size: 1rem;
-    max-width: 100%;
-  }
 }
 
 /* ============================
    ALERTAS, CONTAINERS E TEXTOS DIVERSOS
    ============================
 */
+.alert-project-card {
+  padding: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  color: #000000;
+  font-weight: bold;
+  text-align: justify;
+  font-size: 1rem;
+}
 
 .text-cv-page,
 .text-alert-ui {
