@@ -59,7 +59,12 @@ export default function () {
           </div>
 
         </section>
-
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <Footer />
       </main>
     </>

@@ -582,13 +582,35 @@ label svg {
 }
 
 .btn-cv-page {
-  width: 20%;
-  display: flex;               
-  align-items: center;        
-  justify-content: center;     
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   margin: auto;
-  gap: 0.5rem;              
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #000;
+  border-radius: 0.375rem;
+  background-color: transparent;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
 }
+
+@media (min-width: 768px) {
+  .btn-cv-page {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn-cv-page {
+    width: 20%;
+  }
+}
+
 
 /* Imagens de projetos */
 .img-card-projects {
