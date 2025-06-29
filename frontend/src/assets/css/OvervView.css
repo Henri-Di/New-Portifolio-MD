@@ -177,6 +177,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 0;
+  text-align: justify;
 }
 
 .cards-section-frontend-code:hover {

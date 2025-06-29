@@ -60,7 +60,7 @@ export default function Projects() {
 
           {/* Projeto BandsCloud */}
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
-            <h2 className="text-xl font-semibold text-violet-800 mb-2">BandsCloud - Sistema de Conexão Músical</h2>
+            <h2 className="text-xl font-semibold text-violet-800 mb-2">BandsCloud - Sistema Músical</h2>
             <br />
             <p className="text-sm text-gray-700 text-justify">
               O BandsCloud é uma plataforma web inovadora criada para fortalecer a conexão entre artistas independentes, estabelecimentos culturais e fãs de música. Pensada para fomentar a cena musical independente, a aplicação oferece um espaço onde músicos podem divulgar seus trabalhos, encontrar oportunidades para se apresentarem ao vivo e estabelecer parcerias com bares, casas de shows e outros locais que buscam talentos autênticos.

@@ -73,7 +73,7 @@ export default function FormService() {
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-lg bg-gray-800 p-4 sm:p-6 rounded-md shadow-lg"
       >
-        <h4 className="text-2xl font-semibold text-white mb-6 text-center">
+        <h4 className="text-2xl font-semibold text-black mb-6 text-center">
           Solicitar Orçamento
         </h4>
 
@@ -193,7 +193,7 @@ export default function FormService() {
               <p className="text-red-500 mt-1 text-sm">{errors.estado.message}</p>
             )}
           </div>
-
+          <br />
           <div>
             <label
               htmlFor="cidade"
