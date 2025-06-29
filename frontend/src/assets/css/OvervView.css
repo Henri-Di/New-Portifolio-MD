@@ -287,20 +287,11 @@ span {
    Containers com largura total e padding horizontal,
    padding lateral maior em telas grandes para layout espaçado.
 */
-.main-container,
-.main-container-services-page {
+.main-container{
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   padding: 1rem;
-}
-
-/* Telas a partir de 640px (sm) */
-@media (min-width: 640px) {
-  .main-container-services-page {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
 }
 
 /* Telas a partir de 1024px (lg) */
@@ -308,11 +299,6 @@ span {
   .main-container {
     padding-left: 9rem;
     padding-right: 9rem;
-  }
-
-  .main-container-services-page {
-    padding-left: 10%;
-    padding-right: 10%;
   }
 }
 

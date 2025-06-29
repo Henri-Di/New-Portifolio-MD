@@ -27,7 +27,7 @@ export default function Services() {
         <title>Serviços - M&D Desenvolvedor Web Fullstack</title>
       </Helmet>
 
-      <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center justify-center px-4  main-container-sevices-page">
+      <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center justify-center px-4  main-container">
       <Header />
 
         {/* Navbar adicionada */}
