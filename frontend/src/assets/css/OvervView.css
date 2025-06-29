@@ -527,29 +527,6 @@ p.text-red-500 {
   color: #dc2626; /* vermelho erro */
 }
 
-/* Botão de envio do formulário */
-.btn-submit-services-page {
-  background-color: transparent;
-  color: #000000;
-  font-size: 1rem;
-  font-weight: 700;
-  border: 1px solid #000000;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  max-width: 320px;
-  width: 100%;
-  margin: 1.5rem auto 0;
-  display: block;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
-}
-
-.btn-submit-services-page:hover {
-  background-color: #00FFEF;
-}
 
 /* Ícones dentro das labels */
 label svg {
@@ -591,22 +568,6 @@ label svg {
    ALERTAS, CONTAINERS E TEXTOS DIVERSOS
    ============================
 */
-.alert-project-card {
-  padding: 1.5rem;
-  border-radius: 5px;
-  border: 1px solid #000000;
-  color: #000000;
-  font-weight: bold;
-  text-align: justify;
-  font-size: 1rem;
-}
-
-.container-cv-page,
-.container-news-page,
-.container-blog-page {
-  padding-left: 8.5556rem;
-  padding-right: 8.5556rem;
-}
 
 .text-cv-page,
 .text-alert-ui {
@@ -614,12 +575,6 @@ label svg {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-}
-
-.text-alert-ui {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
 }
 
 .btn-cv-page{
@@ -664,13 +619,6 @@ video {
 }
 
 @media (max-width: 768px) {
-  .container-cv-page,
-  .container-news-page,
-  .container-blog-page {
-    padding-left: 1.2556rem;
-    padding-right: 1.2556rem;
-  }
-
   .img-card-projects {
     width: 25%;
     margin-top: 1rem;

@@ -26,7 +26,7 @@ export default function Blog() {
       <Helmet>
         <title>Blog - M&D Desenvolvedor Web Fullstack</title>
       </Helmet>
-      <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center px-4 main-container container-news-page">
+      <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center px-4 main-container">
         <Header />
         <Navbar />
         <br />
@@ -38,6 +38,9 @@ export default function Blog() {
             message="Esta página está em construção. Em breve, o conteúdo estará disponível com todas as informações e recursos planejados para esta seção."
           />
         </section>
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />
