@@ -531,6 +531,7 @@ p.text-red-500 {
 .btn-submit-services-page {
   background-color: transparent;
   color: #000000;
+  font-size: 1rem;
   font-weight: 700;
   border: 1px solid #000000;
   padding: 0.75rem 1.5rem;
