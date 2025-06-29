@@ -89,7 +89,12 @@ export default function Contact() {
             />
           </a>
         </section>
-
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <Footer />
       </main>
     </>
