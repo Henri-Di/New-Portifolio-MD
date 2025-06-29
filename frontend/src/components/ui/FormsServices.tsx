@@ -73,9 +73,6 @@ export default function FormService() {
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-lg bg-gray-800 p-4 sm:p-6 rounded-md shadow-lg"
       >
-        <h4 className="text-2xl font-semibold text-black mb-6 text-center">
-          Solicitar Orçamento
-        </h4>
 
         {serverError && (
           <p className="text-red-500 mb-4 font-semibold text-center">

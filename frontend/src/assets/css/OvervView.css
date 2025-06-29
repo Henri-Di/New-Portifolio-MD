@@ -581,10 +581,13 @@ label svg {
   text-align: center;
 }
 
-.btn-cv-page{
+.btn-cv-page {
   width: 20%;
-  display: block;
+  display: flex;               
+  align-items: center;        
+  justify-content: center;     
   margin: auto;
+  gap: 0.5rem;              
 }
 
 /* Imagens de projetos */
