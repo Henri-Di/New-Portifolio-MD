@@ -35,7 +35,7 @@ export default function ProjectTwo() {
           {/* Projeto Caixa */}
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2">Escopo</h2>
-            <p className="text-sm text-gray-700 text-justify">
+            <p className="text-sm text-gray-700 text-justify text-project-page">
               O Aurum é uma aplicação web desenvolvida para atender de forma abrangente às necessidades de Ponto de Venda (PDV) e Gestão Empresarial. A plataforma oferece uma solução completa para o controle e automação de operações comerciais, integrando funcionalidades essenciais como controle de caixa, gerenciamento de estoque, gestão de pessoas, vendas e orçamentos.
 
               Com uma interface intuitiva e recursos voltados para a eficiência operacional, o sistema permite que empresas de diferentes portes acompanhem e gerenciem suas atividades em tempo real, promovendo maior organização, agilidade nos processos e apoio à tomada de decisão. Além disso, o Aurum conta com módulos adicionais que abrangem aspectos estratégicos da gestão, tornando-se uma ferramenta robusta para o dia a dia empresarial.

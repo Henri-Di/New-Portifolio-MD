@@ -35,7 +35,7 @@ export default function ProjectThree() {
           {/* Projeto Caixa */}
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2">Escopo</h2>
-            <p className="text-sm text-gray-700 text-justify">
+            <p className="text-sm text-gray-700 text-justify text-project-page">
               O BandsCloud é uma aplicação web inovadora desenvolvida com o objetivo de conectar artistas independentes, estabelecimentos e fãs de música em um único espaço digital. A plataforma foi pensada para fortalecer a cena musical independente, oferecendo um ambiente colaborativo e interativo.
 
               Por meio do BandsCloud, artistas podem divulgar seus trabalhos, promover eventos, encontrar oportunidades de apresentações ao vivo e se conectar diretamente com locais que buscam novos talentos para compor sua programação cultural. Já os fãs de música têm acesso a uma vitrine de novos artistas, podendo conhecer, acompanhar e curtir seus conteúdos favoritos.

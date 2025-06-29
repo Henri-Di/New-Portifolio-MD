@@ -35,7 +35,7 @@ export default function ProjectOne() {
           {/* Projeto Caixa */}
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2">Escopo</h2>
-            <p className="text-sm text-gray-700 text-justify">
+            <p className="text-sm text-gray-700 text-justify text-project-page">
               O sistema de gestão de estoque foi desenvolvido para atender às demandas específicas de controle e monitoramento do inventário em dois datacenters da Caixa Econômica Federal, localizados no Distrito Federal. Sob a responsabilidade do Departamento de Instalações, este sistema tem como objetivo principal otimizar a operação de inventário em ambientes corporativos de grande porte.
 
               Além disso, o sistema garante um alto nível de segurança e um controle rigoroso sobre os dados, assegurando a integridade e a disponibilidade das informações relacionadas ao estoque, essenciais para a gestão eficiente dos recursos dos datacenters. Oferencdo otimização nos processos e tomadas de decisão.
