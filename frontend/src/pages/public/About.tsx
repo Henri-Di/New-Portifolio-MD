@@ -23,7 +23,7 @@ export default function () {
   return (
     <>
       <Helmet>
-        <title>Contatos - M&D Desenvolvedor Web Fullstack</title>
+        <title>Sobre Mim - M&D Desenvolvedor Web Fullstack</title>
       </Helmet>
 
       <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center justify-center px-4 main-container">
