@@ -301,7 +301,7 @@ span {
 @media (min-width: 1024px) {
   .main-container {
     padding-left: 9rem;
-    padding-right: 1rem;
+    padding-right: 9rem;
   }
 
   .main-container-services-page {
@@ -491,7 +491,7 @@ label svg {
 .container-cv-page,
 .container-news-page,
 .container-blog-page {
-  margin-left: 3.5556rem;
+  margin-left: 2.5556rem;
   margin-right: 3.5556rem;
 }
 
