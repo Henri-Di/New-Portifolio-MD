@@ -76,6 +76,10 @@ body {
   text-decoration: none;
   transition: color 0.3s ease;
   font-weight: 600;
+
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
 }
 
 /* Linha de destaque animada abaixo do link */
@@ -100,6 +104,7 @@ body {
   transform: scaleX(1);
 }
 
+
 /* ============================
    NAVBAR - RESPONSIVIDADE PARA TELAS PEQUENAS
    ============================
@@ -116,14 +121,14 @@ body {
 
   .link-navbar {
     margin: 0.25rem 0.25rem;
-    padding: 0.5rem 0.75rem;
+    padding: 0.75rem 0.75rem;
     font-size: 0.9rem;
     border-radius: 5px;
     border: 1px solid #000000;
 
     flex: 0 0 95.555555%; /* ocupa 95% da largura do container */
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -335,7 +340,9 @@ span {
 */
 .text-btn-home-page,
 .text-btn-project-page {
+  width: 100%;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: 0.2556rem;
 }

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import '../../assets/css/Over.css';
 import { Helmet } from 'react-helmet';
 import '../../assets/css/OvervView.css';
 import { LoadingSpinner } from '../../components/ui/LoadingSpinner';

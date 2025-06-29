@@ -1,5 +1,6 @@
 // src/pages/public/CV.tsx
 import { Helmet } from 'react-helmet';
+import '../../assets/css/Over.css';
 import '../../assets/css/OvervView.css';
 import { LoadingSpinner } from '../../components/ui/LoadingSpinner';
 import Navbar from '../../components/ui/Navbar';
