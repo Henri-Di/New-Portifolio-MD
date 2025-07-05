@@ -17,7 +17,7 @@
 body {
   background-color: #ffffff;
   font-family: "Reddit Sans Condensed", sans-serif;
-  overflow-x: hidden; /* evita scroll horizontal */
+  overflow-x: hidden; 
   width: 100%;
   max-width: 100%;
 }
@@ -210,7 +210,7 @@ body {
 /* Efeito hover nos cards */
 .cards-section-frontend-code:hover {
   transform: scale(0.98) translateY(-2px);
-  box-shadow: 0 6px 12px rgba(137, 43, 226, 0.2);
+  box-shadow: 0 6px 12px rgba(137, 43, 226, 0.3);
 }
 
 /* Responsividade cards */
