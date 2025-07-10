@@ -3,28 +3,23 @@ FROM node:20-alpine AS build
 
 WORKDIR /app
 
-# Copia apenas package.json e package-lock.json (se existir) para aproveitar cache do Docker
+# Copia somente arquivos necessários para cache inteligente
 COPY package*.json ./
 
-# Instala dependências
-RUN npm install
+# Instala as dependências com cache (requer BuildKit ativado)
+RUN --mount=type=cache,target=/root/.npm npm ci --omit=dev
 
-# Copia o restante do código da aplicação
+# Copia o restante da aplicação
 COPY . .
 
-# Executa build da aplicação
+# Gera o build de produção
 RUN npm run build
 
-# Stage 2: Serve o build estático com NGINX
+# Stage 2: Serve com NGINX
 FROM nginx:alpine
 
-# Copia build do Vite (pasta dist/) da etapa anterior
 COPY --from=build /app/dist /usr/share/nginx/html
-
-# Copia arquivo de configuração customizado para SPA (rotas client-side)
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
-
-# Comando padrão para rodar o NGINX em foreground
 CMD ["nginx", "-g", "daemon off;"]

@@ -13,7 +13,7 @@ import Services from "./pages/public/Services";
 import Blog  from "./pages/public/Blog";
 import Project1 from "./pages/public/Project1";
 import Project2 from "./pages/public/Project2";
-import Project3 from "./pages/public/Project3";
+
 
 import Login from "./pages/admin/Login";
 import Dashboard from "./pages/admin/Dashboard";
@@ -40,7 +40,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/project1" element={<Project1 />} />
           <Route path="/project2" element={<Project2 />} />
-          <Route path="/project3" element={<Project3 />} />
+
     
 
           {/* Rotas administrativas protegidas */}
