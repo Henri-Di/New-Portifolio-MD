@@ -48,9 +48,15 @@ export default function CV() {
           </a>
 
         </section>
-        <br /><br /><br />
-        <br /><br /><br />
-        <br /><br /><br /> 
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br /> 
         <br />
         <Footer />
       </main>

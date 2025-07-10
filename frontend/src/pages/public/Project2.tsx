@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import '../../assets/css/Over.css';
 import '../../assets/css/OvervView.css';
 import { LoadingSpinner } from '../../components/ui/LoadingSpinner';
@@ -7,7 +8,7 @@ import { useEffect, useState } from 'react';
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer'; 
 
-export default function ProjectTwo() {
+export default function ProjectThree() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -36,42 +37,72 @@ export default function ProjectTwo() {
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2">Escopo</h2>
             <p className="text-sm text-gray-700 text-justify text-project-page">
-              O Aurum é uma aplicação web desenvolvida para atender de forma abrangente às necessidades de Ponto de Venda (PDV) e Gestão Empresarial. A plataforma oferece uma solução completa para o controle e automação de operações comerciais, integrando funcionalidades essenciais como controle de caixa, gerenciamento de estoque, gestão de pessoas, vendas e orçamentos.
+              O BandsCloud é uma plataforma web inovadora criada para fortalecer e conectar o ecossistema da música independente, reunindo artistas, estabelecimentos culturais e fãs em um único ambiente digital integrado. Desenvolvida com foco na colaboração e na interação, a aplicação oferece recursos que possibilitam aos artistas independentes divulgar seus trabalhos, promover eventos, ampliar sua rede de contatos e acessar oportunidades de apresentações ao vivo junto a espaços culturais que buscam novos talentos para enriquecer sua programação.
 
-              Com uma interface intuitiva e recursos voltados para a eficiência operacional, o sistema permite que empresas de diferentes portes acompanhem e gerenciem suas atividades em tempo real, promovendo maior organização, agilidade nos processos e apoio à tomada de decisão. Além disso, o Aurum conta com módulos adicionais que abrangem aspectos estratégicos da gestão, tornando-se uma ferramenta robusta para o dia a dia empresarial.
+              Para os estabelecimentos, o BandsCloud funciona como uma ponte eficaz para descobrir e selecionar artistas emergentes alinhados ao perfil de suas iniciativas culturais, facilitando parcerias estratégicas e a curadoria de experiências musicais autênticas. Os fãs, por sua vez, encontram na plataforma uma vitrine diversificada de novos talentos, onde podem explorar, acompanhar e interagir com conteúdos exclusivos, fortalecendo sua conexão com a cena musical local e independente.
+
+              Assim, o BandsCloud vai além de um simples espaço de divulgação, atuando como um facilitador tecnológico que promove o desenvolvimento sustentável da cena musical independente, estimulando a troca, o crescimento coletivo e o acesso democrático à cultura musical.
             </p>
 
           </div>
 
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2">Frontend</h2>
-            <img src="/images/saas.png" className="mx-auto h-16 object-contain img-card-projects" />
             <img src="/images/tailwind.png" className="mx-auto h-16 object-contain img-card-projects" />
-            <img src="/images/bootstrap.png" className="mx-auto h-16 object-contain img-card-projects" />
+            <img src="/images/vite.png" className="mx-auto h-16 object-contain img-card-projects" />
+            <img src="/images/atom.png" className="mx-auto h-16 object-contain img-card-projects" />
+            <img src="/images/typescript.png" className="mx-auto h-16 object-contain img-card-projects" />
             <img src="/images/javascript.png" className="mx-auto h-16 object-contain img-card-projects" />
           </div>
 
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2">Backend</h2>
             <img src="/images/php.png" className="mx-auto h-16 object-contain img-card-projects" />
-            <img src="/images/laravel.png" className="mx-auto h-16 object-contain img-card-projects" />
+            <img src="/images/symfony.png" className="mx-auto h-16 object-contain img-card-projects" />
+             <img src="/images/nginx.png" className="mx-auto h-16 object-contain img-card-projects" />
+            <img src="/images/docker.png" className="mx-auto h-16 object-contain img-card-projects" />
             <img src="/images/mysql.png" className="mx-auto h-16 object-contain img-card-projects" />
-            <img src="/images/postgresql.png" className="mx-auto h-16 object-contain img-card-projects" />
           </div>
 
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2">Aplicação Web</h2>
-
+  
             <video 
             className="mx-auto rounded-lg" 
             width="225" 
-            height="330" 
+            height="420" 
             controls 
             preload="metadata"
             >
             <source src="/video/project-view-2.mp4" type="video/mp4" />
             Seu navegador não suporta a tag de vídeo.
           </video>
+          </div>
+
+          <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
+            <h2 className="text-xl font-semibold text-violet-800 mb-2">Deploy Render</h2>
+            <a
+            href="https://bandscloud-frontend.onrender.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page"
+            >
+            Demo Frontend
+            </a>
+
+          </div>
+
+          <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
+            <h2 className="text-xl font-semibold text-violet-800 mb-2">GitHub</h2>
+            <a
+            href="https://github.com/Henri-Di/BandsCloud"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-button-color flex items-center justify-center gap-3 text-btn-project-page"
+            >
+            Repositório GitHub
+            </a>
+
           </div>
         </section>
         
