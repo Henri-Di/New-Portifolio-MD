@@ -99,7 +99,7 @@ export default function Home() {
               <Megaphone size={20} /> Novidades
             </h2>
             <p className="text-sm text-gray-700">Fique por dentro das atualizações, eventos e conteúdos que estou produzindo.</p>
-            <Link className="bg-button-color inline-flex justify-center items-center gap-3 mt-2 text-center text-btn-home-page" to="/news">
+            <Link className="bg-button-color inline-flex justify-center items-center gap-3 mt-2 text-center text-btn-home-page" to="/">
               <Megaphone size={18} /> Veja Novidades
             </Link>
           </div>
@@ -119,7 +119,7 @@ export default function Home() {
               <BookOpen size={20} /> Blog
             </h2>
             <p className="text-sm text-gray-700">Leia artigos sobre desenvolvimento, carreira e dicas técnicas.</p>
-            <Link className="bg-button-color inline-flex justify-center items-center gap-3 mt-2 text-center text-btn-home-page" to="/blog">
+            <Link className="bg-button-color inline-flex justify-center items-center gap-3 mt-2 text-center text-btn-home-page" to="/">
               <BookOpen size={18} /> Meu Blog
             </Link>
           </div>

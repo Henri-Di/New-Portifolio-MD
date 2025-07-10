@@ -22,9 +22,9 @@ export default function Navbar() {
     { to: '/skills', label: 'Skills', icon: <BadgeCheck size={18} /> },
     { to: '/services', label: 'Serviços', icon: <Handshake size={18} /> },
     { to: '/cv', label: 'Currículo', icon: <FileText size={18} /> },
-    { to: '/news', label: 'Novidades', icon: <Megaphone size={18} /> },
+    { to: '/', label: 'Novidades', icon: <Megaphone size={18} /> },
     { to: '/contact', label: 'Contatos', icon: <Mail size={18} /> },
-    { to: '/blog', label: 'Blog', icon: <BookOpen size={18} /> },
+    { to: '/', label: 'Blog', icon: <BookOpen size={18} /> },
   ];
 
   return (
