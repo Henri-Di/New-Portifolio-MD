@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Instala as dependências com cache (requer BuildKit ativado)
-RUN --mount=type=cache,target=/root/.npm npm ci --omit=dev
+RUN --mount=type=cache,target=/root/.npm npm ci 
 
 # Copia o restante da aplicação
 COPY . .
