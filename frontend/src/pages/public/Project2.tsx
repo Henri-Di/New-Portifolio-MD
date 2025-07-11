@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import Header from '../../components/ui/Header';
 import Footer from '../../components/ui/Footer'; 
 
-export default function ProjectThree() {
+export default function ProjectTwo() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

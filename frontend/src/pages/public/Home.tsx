@@ -14,7 +14,7 @@ import {
 
 import { LoadingSpinner } from '../../components/ui/LoadingSpinner'; 
 import Header from '../../components/ui/Header';
-import Footer from '../../components/ui/Footer'; 
+import Footer from '../../components/ui/Footer';
 import '../../assets/css/Over.css';
 import '../../assets/css/OvervView.css';
 
