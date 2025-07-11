@@ -29,10 +29,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setToken(storedToken);
       try {
         const decoded = jwtDecode<UserPayload>(storedToken);
-        // exemplo: pega o primeiro role que o usuário tem
         setRole(decoded.roles[0] || null);
       } catch {
-        // token inválido
         setToken(null);
         setRole(null);
         localStorage.removeItem("token");
