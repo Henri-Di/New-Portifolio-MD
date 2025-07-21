@@ -23,7 +23,7 @@ export default function ProjectTwo() {
   return (
     <>
       <Helmet>
-        <title>Projeto Sistema de Invetário - M&D Desenvolvedor Web Fullstack</title>
+        <title>Projeto BandsCloud - M&D Desenvolvedor Web Fullstack</title>
       </Helmet>
 
       <main className="min-h-screen bg-white text-gray-800 flex flex-col items-center justify-center px-4 main-container">

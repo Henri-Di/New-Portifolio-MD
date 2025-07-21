@@ -57,7 +57,7 @@ export default function Skills() {
             <img src="/images/laravel.png" className="mx-auto h-16 object-contain img-card-skills-page" />
           </div>
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
-            <h2 className="text-xl font-semibold text-violet-800 mb-4">React Native</h2>
+            <h2 className="text-xl font-semibold text-violet-800 mb-4">React JS</h2>
             <img src="/images/atom.png" className="mx-auto h-16 object-contain img-card-skills-page" />
           </div>
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">

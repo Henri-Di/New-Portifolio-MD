@@ -80,10 +80,7 @@ export default function Home() {
               <Handshake size={18} /> Solicite Orçamento
             </Link>
           </div>
-        </section>
 
-        {/* Cards - Segunda Linha */}
-        <section className="grid gap-6 max-w-6xl w-full mt-10 container-father-cards-page">
           <div className="bg-violet-100 p-6 rounded-2xl shadow-md text-center cards-section-frontend-code">
             <h2 className="text-xl font-semibold text-violet-800 mb-2 flex items-center justify-center gap-2">
               <FileText size={20} /> Currículo
