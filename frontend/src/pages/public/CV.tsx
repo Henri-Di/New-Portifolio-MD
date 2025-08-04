@@ -37,7 +37,7 @@ export default function CV() {
             Você pode visualizar ou baixar meu currículo atualizado clicando no botão abaixo.
           </p>
           <a
-            href="/Curriculo Matheus Henrique Ribeiro Diamantino.pdf"
+            href="/Curriculo-Matheus-Henrique-Ribeiro-Diamantino.pdf"
             target="_blank"
             rel="noopener noreferrer"
             download
